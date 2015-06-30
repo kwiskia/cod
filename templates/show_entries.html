@@ -1,11 +1,16 @@
 {% extends "layout.html" %}
 {% block body %}
 	<form action="{{ url_for('add_entry') }}" method="post">
-		<label for="title">Title</label>
-		<input type="text" size="50" name="title" /><br />
-		<label for="text">Text</label>
-		<textarea name="text" rows="5" cols="40"></textarea><br />
-		<input type="submit" value="Save" />
+		<div class="form-group">
+			<label for="title">Title</label>
+			<input type="text" size="50" name="title" class="form-control" placeholder="Title" />
+		</div>
+		<div class="form-group">
+			<label for="text">Text</label>
+			<textarea name="text" class="form-control"></textarea>
+		</div>
+
+		<button type="submit" class="btn btn-primary">Save</button>
 	</form>
 	<ul>
 	{% for entry in entries %}
